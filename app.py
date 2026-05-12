@@ -4,6 +4,8 @@ import time
 
 app = Flask(__name__)
 
+start_time = time.time()
+
 @app.route('/')
 def home():
     return jsonify({"status": "ok", "service": "devops-api"})
