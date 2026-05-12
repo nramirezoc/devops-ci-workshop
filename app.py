@@ -14,6 +14,7 @@ def health():
     return jsonify({
         "cpu_percent": cpu,
         "memory_percent": mem,
+        "uptime_seconds": uptime,
         "status": "healthy" if cpu < 80 and mem < 80 else "unhealthy"
     })
 
