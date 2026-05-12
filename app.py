@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import psutil
+import time
 
 app = Flask(__name__)
 
@@ -11,6 +12,8 @@ def home():
 def health():
     cpu = psutil.cpu_percent()
     mem = psutil.virtual_memory().percent
+    uptime = int(time.time() - start_time)
+    
     return jsonify({
         "cpu_percent": cpu,
         "memory_percent": mem,
